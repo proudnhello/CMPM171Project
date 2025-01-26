@@ -5,12 +5,12 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     // I DONT KNOW A BETTER SOLUTION MOORE HELP
-    public List<EnemyBaseClass> possibleEnemies;
+    public List<GameObject> possibleEnemies;
     public List<int> weights;
     public int frequency = 10;
     public int cluster = 1;
     private int totalWeight;
-    private Dictionary<int, EnemyBaseClass> spawnerDict;
+    private Dictionary<int, GameObject> spawnerDict;
     void Start()
     {
         // Preventative measures
@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour
 
         // Build spawner dictionary
         int count = 0;
-        spawnerDict = new Dictionary<int, EnemyBaseClass>();
+        spawnerDict = new Dictionary<int, GameObject>();
         for(int i = 0; i < weights.Count; i++)
         {
             for(int j = 0; j < weights[i]; j++)
