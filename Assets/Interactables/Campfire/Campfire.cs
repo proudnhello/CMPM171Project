@@ -25,10 +25,12 @@ public class Campfire : Interactable
 
         if (CanInteract() && cooking == false)
         {
+            Debug.Log("Exit Cooking");
             Cook();
         } 
         else if (CanInteract() && cooking == true)
         {
+            Debug.Log("Enter Cooking");
             StopCooking();
         }
     }
@@ -37,6 +39,10 @@ public class Campfire : Interactable
     {
         CursorManager.Singleton.ShowCursor();
         cookingPot.SetActive(true);
+        if(CookingScreen == null)
+        {
+            CookingScreen = CookingManager.Singleton.CookingCanvas;
+        }
         CookingScreen.SetActive(true);
         SetPlayerMovement(false);
         cooking = true;

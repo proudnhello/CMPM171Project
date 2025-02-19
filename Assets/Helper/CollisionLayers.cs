@@ -8,6 +8,7 @@ public class CollisionLayers : MonoBehaviour
     public LayerMask interactableLayer;
     public LayerMask destroyableLayer;
     public LayerMask enemyLayer;
+    public LayerMask environmentLayer;
 
     private void Awake()
     {
@@ -32,6 +33,30 @@ public class CollisionLayers : MonoBehaviour
     public bool InDestroyableLayer(GameObject source)
     {
         return (destroyableLayer.value & (1 << source.layer)) != 0;
+    }
+
+    public bool InEnvironmentLayer(GameObject source)
+    {
+        return (environmentLayer.value & (1 << source.layer)) != 0;
+    }
+
+    public LayerMask GetCollisionLayer()
+    {
+        return collisionLayer;
+    }
+    public LayerMask GetEnemyLayer()
+    {
+        return enemyLayer;
+    }
+
+    public LayerMask GetDestroyableLayer()
+    {
+        return destroyableLayer;
+    }
+
+    public LayerMask GetEnvironmentLayer()
+    {
+        return environmentLayer;
     }
 
     public int GetInteractableLayer()
