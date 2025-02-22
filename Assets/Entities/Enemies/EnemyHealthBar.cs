@@ -20,7 +20,7 @@ public class EnemyHealthBar : MonoBehaviour
     void Update()
     {
         debugText.text = enemyClass.GetHealth().ToString();
-        slider.value = enemyClass.GetHealth() / 100f;
+        slider.value = enemyClass.GetHealth() / enemyClass.GetBaseStats().maxHealth;
         if (enemy.GetHealth() == 0) {
             gameObject.SetActive(false);
         }

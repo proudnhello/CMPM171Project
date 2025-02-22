@@ -6,6 +6,7 @@ using static EntityInflictionEffectHandler;
 using Unity.VisualScripting;
 using System;
 using Infliction = SoupSpoon.SpoonInfliction;
+using Unity.VisualScripting.Antlr3.Runtime;
 
 public class Entity : MonoBehaviour
 {
@@ -35,6 +36,11 @@ public class Entity : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         inflictionHandler = new(this);
         ResetStats();
+    }
+
+    public BaseStats GetBaseStats()
+    {
+        return baseStats;
     }
 
     public void ResetStats()
