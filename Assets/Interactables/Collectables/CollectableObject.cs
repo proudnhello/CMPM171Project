@@ -27,6 +27,7 @@ public class CollectableObject : Interactable
     public void Drop(Vector2 dropPoint)
     {
         transform.position = dropPoint;
+        StartCoroutine(SpawnAnimation());
         SetHighlighted(false);
     }
 
@@ -52,5 +53,24 @@ public class CollectableObject : Interactable
             yield return null;
         }
         this.transform.parent.GetComponent<Collectable>().Collect();
+    }
+
+    private IEnumerator SpawnAnimation()
+    {
+        float spawnSpeed = 0.5f;
+        float spawnScale = 0.1f;
+        float targetScale = 1f;
+        Debug.Log("Spawning");
+        Vector2 randomPosition = new Vector2(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
+        while (Vector2.Distance(transform.position, randomPosition) > 0.01f)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, randomPosition, spawnSpeed * Time.deltaTime);
+            yield return null;
+        }
+        // while (transform.localScale.x < targetScale)
+        // {
+        //     transform.localScale += new Vector3(spawnScale, spawnScale, 0) * spawnSpeed * Time.deltaTime;
+        //     yield return null;
+        // }
     }
 }
