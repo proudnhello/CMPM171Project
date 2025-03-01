@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool canDash = true;
     private bool isDashing = false;
-    private float dashTime = 0.2f;
+    private float dashTime = 1f;
     private float dashSpeed = 20f;
     private float dashCooldown = 1f;
 
@@ -96,19 +96,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext ctx)
     {
-        // if (ctx.performed)
-        // {
-            Debug.Log("pushed [dash] button");
             StartCoroutine(Dashing());
-        // }
-        
     }
 
     public IEnumerator Charge(float chargeTime, float chargeStrength)
     {
         rb.velocity = Vector2.zero;
         charging = true;
-        rb.AddForce(currentDirection.normalized * chargeStrength, ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(horizontal, vertical).normalized * chargeStrength, ForceMode2D.Impulse);
         yield return new WaitForSeconds(chargeTime);
         charging = false;
     }
@@ -120,11 +115,16 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Dashing");
             canDash = false;
             isDashing = true;
-            rb.velocity = Vector2.zero;
-            rb.AddForce(currentDirection.normalized * dashSpeed, ForceMode2D.Impulse);
+            rb.velocity = currentDirection.normalized * dashSpeed;
+            Debug.Log(rb.velocity);
+            // rb.velocity = Vector2.zero;
+
+            // rb.AddForce(currentDirection.normalized * dashSpeed, ForceMode2D.Impulse);
             yield return new WaitForSeconds(dashTime);
+            Debug.Log("Done Dashing");
             isDashing = false;
             yield return new WaitForSeconds(dashCooldown);
+            Debug.Log("Dash Cooldown Over");
             canDash = true;
         }
     }
