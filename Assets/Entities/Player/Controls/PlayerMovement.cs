@@ -11,8 +11,6 @@ public class PlayerMovement : MonoBehaviour
     private bool _useMouse;
     private Vector2 _previousMousePosition;
     InputAction movementInput;
-    InputAction dashInput;
-
     public bool charging = false;
 
     internal float currrentMoveSpeed = 0;
@@ -34,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        PlayerEntityManager.Singleton.input.Player.Dash.started += Dash;
         movementInput = PlayerEntityManager.Singleton.input.Player.Movement;
     }
 
@@ -58,6 +57,8 @@ public class PlayerMovement : MonoBehaviour
         {
             col.enabled = false; // Completely disable collisions
         }
+
+        PlayerEntityManager.Singleton.input.Player.Dash.started -= Dash;
     }
 
     // Update is called once per frame
@@ -81,11 +82,6 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         _previousMousePosition = Input.mousePosition;
-
-        if (dashInput != null && dashInput.triggered)
-        {
-            StartCoroutine(Dash());
-        }
     }
 
     void FixedUpdate()
@@ -98,6 +94,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Dash(InputAction.CallbackContext ctx)
+    {
+        // if (ctx.performed)
+        // {
+            Debug.Log("pushed [dash] button");
+            StartCoroutine(Dashing());
+        // }
+        
+    }
+
     public IEnumerator Charge(float chargeTime, float chargeStrength)
     {
         rb.velocity = Vector2.zero;
@@ -107,11 +113,11 @@ public class PlayerMovement : MonoBehaviour
         charging = false;
     }
 
-    public IEnumerator Dash()
+    public IEnumerator Dashing()
     {
-        Debug.Log("Dashing");
         if (canDash)
         {
+            Debug.Log("Dashing");
             canDash = false;
             isDashing = true;
             rb.velocity = Vector2.zero;
