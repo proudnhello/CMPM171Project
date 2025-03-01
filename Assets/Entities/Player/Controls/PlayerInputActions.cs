@@ -71,6 +71,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""aaceabc7-f462-46b7-a82a-076e2e7a28fd"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -227,6 +236,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Encyclopedia"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8135de64-3e1c-4a1f-a142-9dc98701b13d"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -240,6 +260,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_CycleSpoon = m_Player.FindAction("CycleSpoon", throwIfNotFound: true);
         m_Player_Encyclopedia = m_Player.FindAction("Encyclopedia", throwIfNotFound: true);
+        m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -311,6 +332,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_CycleSpoon;
     private readonly InputAction m_Player_Encyclopedia;
+    private readonly InputAction m_Player_Dash;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -320,6 +342,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @CycleSpoon => m_Wrapper.m_Player_CycleSpoon;
         public InputAction @Encyclopedia => m_Wrapper.m_Player_Encyclopedia;
+        public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -344,6 +367,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Encyclopedia.started += instance.OnEncyclopedia;
             @Encyclopedia.performed += instance.OnEncyclopedia;
             @Encyclopedia.canceled += instance.OnEncyclopedia;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -363,6 +389,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Encyclopedia.started -= instance.OnEncyclopedia;
             @Encyclopedia.performed -= instance.OnEncyclopedia;
             @Encyclopedia.canceled -= instance.OnEncyclopedia;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -387,5 +416,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnCycleSpoon(InputAction.CallbackContext context);
         void OnEncyclopedia(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
     }
 }

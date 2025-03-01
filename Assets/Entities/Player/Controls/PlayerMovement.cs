@@ -11,11 +11,19 @@ public class PlayerMovement : MonoBehaviour
     private bool _useMouse;
     private Vector2 _previousMousePosition;
     InputAction movementInput;
+    InputAction dashInput;
 
     public bool charging = false;
 
     internal float currrentMoveSpeed = 0;
     internal Vector2 currentDirection;
+
+    private bool canDash = true;
+    private bool isDashing = false;
+    private float dashTime = 0.2f;
+    private float dashSpeed = 20f;
+    private float dashCooldown = 1f;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -73,6 +81,11 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         _previousMousePosition = Input.mousePosition;
+
+        if (dashInput != null && dashInput.triggered)
+        {
+            StartCoroutine(Dash());
+        }
     }
 
     void FixedUpdate()
@@ -92,6 +105,22 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(currentDirection.normalized * chargeStrength, ForceMode2D.Impulse);
         yield return new WaitForSeconds(chargeTime);
         charging = false;
+    }
+
+    public IEnumerator Dash()
+    {
+        Debug.Log("Dashing");
+        if (canDash)
+        {
+            canDash = false;
+            isDashing = true;
+            rb.velocity = Vector2.zero;
+            rb.AddForce(currentDirection.normalized * dashSpeed, ForceMode2D.Impulse);
+            yield return new WaitForSeconds(dashTime);
+            isDashing = false;
+            yield return new WaitForSeconds(dashCooldown);
+            canDash = true;
+        }
     }
 
 }

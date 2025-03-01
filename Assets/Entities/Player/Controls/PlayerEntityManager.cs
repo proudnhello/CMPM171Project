@@ -85,6 +85,11 @@ public class PlayerEntityManager : Entity
         playerMovement.StartCoroutine(playerMovement.Charge(stats.duration, stats.speed));
     }
 
+    public void Roll()
+    {
+        playerMovement.StartCoroutine(playerMovement.Dash());
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // If we're charging and we hit an enemy, apply the inflictions
