@@ -18,9 +18,9 @@ public class PlayerMovement : MonoBehaviour
 
     private bool canDash = true;
     private bool isDashing = false;
-    private float dashTime = 1f;
-    private float dashSpeed = 20f;
-    private float dashCooldown = 1f;
+    [SerializeField] private float dashDuration = 0.3f;
+    [SerializeField] public float dashSpeed = 15f;
+    [SerializeField] public float dashCooldown = 1f;
 
 
     // Start is called before the first frame update
@@ -64,6 +64,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isDashing)
+        {
+            return;
+        }
         // This code is duplicated in CameraFollower.cs. We should consolidate the two into a singleton.
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -86,6 +90,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(isDashing)
+        {
+            return;
+        }
         // If the player is charging, don't allow movement, but still allow the player to rotate
         if (!charging)
         {
@@ -112,19 +120,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canDash)
         {
-            Debug.Log("Dashing");
             canDash = false;
             isDashing = true;
-            rb.velocity = currentDirection.normalized * dashSpeed;
-            Debug.Log(rb.velocity);
-            // rb.velocity = Vector2.zero;
+            rb.velocity = new Vector2(horizontal, vertical).normalized * dashSpeed;
 
-            // rb.AddForce(currentDirection.normalized * dashSpeed, ForceMode2D.Impulse);
-            yield return new WaitForSeconds(dashTime);
-            Debug.Log("Done Dashing");
+            yield return new WaitForSeconds(dashDuration);
             isDashing = false;
             yield return new WaitForSeconds(dashCooldown);
-            Debug.Log("Dash Cooldown Over");
             canDash = true;
         }
     }
