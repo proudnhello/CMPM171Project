@@ -21,6 +21,8 @@ public abstract class EnemyBaseClass : Entity
     protected Collider2D _collider;
     protected NavMeshAgent agent;
 
+    private bool hasDied = false;
+
     protected void initEnemy()
     {
         _sprite = GetComponent<SpriteRenderer>();
@@ -75,11 +77,18 @@ public abstract class EnemyBaseClass : Entity
         }
     }
 
+    protected virtual void Update()
+    {
+        if (IsDead()) return;
+        UpdateAI();
+    }
+
     public override void ModifyHealth(int amount)
     {
         base.ModifyHealth(amount);
-        if (IsDead())
+        if (IsDead() && !hasDied)
         {
+            hasDied = true;
             Die();
         }
     }
