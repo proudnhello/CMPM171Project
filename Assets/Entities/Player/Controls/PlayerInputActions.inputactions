@@ -51,15 +51,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Encyclopedia",
-                    "type": "Button",
-                    "id": "6edc8ebd-ee37-4683-98e1-2d7fb1651755",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Dash",
                     "type": "Button",
                     "id": "aaceabc7-f462-46b7-a82a-076e2e7a28fd",
