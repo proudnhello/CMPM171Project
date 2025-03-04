@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static FlavorIngredient.InflictionFlavor;
+using BuffFlavor = FlavorIngredient.BuffFlavor;
+using InflictionFlavor = FlavorIngredient.InflictionFlavor;
+using InflictionType = FlavorIngredient.InflictionFlavor.InflictionType;
 
 public abstract class EnemyBaseClass : Entity
 {
@@ -16,6 +20,8 @@ public abstract class EnemyBaseClass : Entity
     protected Color _initialColor;
     protected Collider2D _collider;
     protected NavMeshAgent agent;
+
+    private bool hasDied = false;
 
     protected void initEnemy()
     {
@@ -51,6 +57,7 @@ public abstract class EnemyBaseClass : Entity
             if (anim != null)
             {
                 // Who the fuck at unity made *this* the way of checking if an animator has an animation?
+                // Not that it works, anyway
                 if (anim.HasState(anim.GetLayerIndex("Base Layer"), Animator.StringToHash("Walk"))){
                     anim.Play("Walk");
                 }
@@ -59,11 +66,29 @@ public abstract class EnemyBaseClass : Entity
         base.ApplyInfliction(spoonInflictions, source);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // check if the collision is with an enemy and if the player is not invincible
+        Entity player = collision.gameObject.GetComponent<Entity>();
+        if (collision.gameObject.tag == "Player" &&
+            player != null)
+        {
+            player.DealDamage(playerCollisionDamage);
+        }
+    }
+
+    protected virtual void Update()
+    {
+        if (IsDead()) return;
+        UpdateAI();
+    }
+
     public override void ModifyHealth(int amount)
     {
         base.ModifyHealth(amount);
-        if (IsDead())
+        if (IsDead() && !hasDied)
         {
+            hasDied = true;
             Die();
         }
     }
