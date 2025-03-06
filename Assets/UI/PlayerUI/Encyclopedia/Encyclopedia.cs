@@ -14,6 +14,7 @@ public class Encyclopedia : MonoBehaviour
     [SerializeField] TMP_Text SourceText;
     [SerializeField] TMP_Text FlavorEntry;
     [SerializeField] TMP_Text AbilityEntry;
+    [SerializeField] TextMeshPro FlavorTooltip;
 
 
     List<Ingredient> collectedEntries;
@@ -22,6 +23,12 @@ public class Encyclopedia : MonoBehaviour
         collectedEntries = new();
         PlayerEntityManager.Singleton.input.Player.Encyclopedia.started += PressEncyclopediaButton;
         RenderedObject.SetActive(false);
+        FlavorTooltip.gameObject.SetActive(false);
+    }
+
+    void Update()
+    {
+        CheckTextHover();
     }
 
     private void OnDisable()
@@ -70,5 +77,27 @@ public class Encyclopedia : MonoBehaviour
         RenderedObject.SetActive(true);
 
 
+    }
+
+    private void CheckTextHover()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        bool isHovering = TMP_TextUtilities.IsIntersectingRectTransform(FlavorEntry.rectTransform, mousePos, Camera.main);
+        if (isHovering)
+        {
+            DisplayFlavorTooltip();
+        }
+        else
+        {
+            Debug.Log("Not displaying tooltip");
+            //FlavorTooltip.gameObject.SetActive(false);
+        }
+        
+    }
+    public void DisplayFlavorTooltip()
+    {
+        //FlavorTooltip.gameObject.SetActive(true);
+        Debug.Log("Displaying tooltip");
+        // FlavorTooltip.text = flavor;
     }
 }
