@@ -27,7 +27,7 @@ public class CookingManager : MonoBehaviour
     [SerializeField] private GameObject campfireWarning;
     public GameObject worldDrop;
     public GameObject basketDrop;
-    public CookingSlot cookingSlot;
+    public CookingSlot currentCookingSlot;
 
     public List<CookingSlot> cookingSlots;
 
@@ -44,7 +44,7 @@ public class CookingManager : MonoBehaviour
     [SerializeField]
     public List<Collectable> cookingIngredients = new();
 
-    private Campfire CurrentCampfire;
+    internal Campfire CurrentCampfire;
 
     public void EnterCooking(Campfire source)
     {
@@ -53,8 +53,11 @@ public class CookingManager : MonoBehaviour
         CursorManager.Singleton.ShowCookingCursor();
         ResetStatsText();
         CookingCanvas.SetActive(true);
+        basketDrop.SetActive(true);
+        CookingCanvas.transform.position = source.GetCanvasPosition();
         isCooking = true;
         instructionsOnPlayScreen.SetActive(false);
+        ClearCookingManagerSprites();
         PlayerEntityManager.Singleton.input.Player.Interact.started += ExitCooking;
         foreach(CookingSlot c in cookingSlots)
         {
@@ -73,6 +76,7 @@ public class CookingManager : MonoBehaviour
             CursorManager.Singleton.HideCursor();
             CursorManager.Singleton.HideCookingCursor();
             CookingCanvas.SetActive(false);
+            basketDrop.SetActive(false);
             ResetStatsText();
             isCooking = false;
             instructionsOnPlayScreen.SetActive(true);
@@ -80,7 +84,7 @@ public class CookingManager : MonoBehaviour
             {
                 c.collectableUI.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                 c.collectableUI.GetComponent<Image>().raycastTarget = true;
-                c.collectableUI.GetComponent<DraggableItem>().pseudoParent = basketDrop.transform;
+                c.collectableUI.GetComponent<DraggableItem>().previousParent = basketDrop.transform;
             }
             cookingIngredients.Clear();
 
@@ -118,7 +122,7 @@ public class CookingManager : MonoBehaviour
     public void AddIngredient(Collectable ingredient)
     {
 
-        Debug.Log($"Added Ingredient: {ingredient}");
+        //Debug.Log($"Added Ingredient: {ingredient}");
         cookingIngredients.Add(ingredient);
         UpdateStatsText();
     }
@@ -126,7 +130,7 @@ public class CookingManager : MonoBehaviour
     // Function to remove an Ability Ingredient
     public void RemoveIngredient(Collectable ingredient)
     {
-        Debug.Log($"Removed Ingredient: {ingredient}");
+        //Debug.Log($"Removed Ingredient: {ingredient}");
         cookingIngredients.Remove(ingredient);
         UpdateStatsText();
     }
@@ -137,7 +141,7 @@ public class CookingManager : MonoBehaviour
         // Don't cook if there are no ability ingredients
         foreach (Collectable ingredient in cookingIngredients)
         {
-            Debug.Log("Has Ability Ingredient: " + ingredient.ingredient.IngredientName);
+            //Debug.Log("Has Ability Ingredient: " + ingredient.ingredient.IngredientName);
             if (ingredient.ingredient.GetType() == typeof(AbilityIngredient))
             {
                 return true;
@@ -216,14 +220,60 @@ public class CookingManager : MonoBehaviour
         cookingIngredients.Clear();
         ResetStatsText();
 
-        // Destroy the objects that were cooked
+        ClearCookingManagerSprites();
+    }
+
+    // Sets all the sprites in the cooking slot to null and 0 alpha
+    public void ClearCookingManagerSprites()
+    {
+        foreach (Transform slot in CookingContent)
+        {
+            slot.gameObject.GetComponent<CookingSlot>().ingredientReference = null;
+            slot.gameObject.GetComponent<CookingSlot>().faceImage.sprite = null;
+
+            Color tempColor = slot.gameObject.GetComponent<CookingSlot>().faceImage.color;
+            tempColor.a = 0;
+            slot.gameObject.GetComponent<CookingSlot>().faceImage.color = tempColor;
+        }
+    }
+
+    // Sets all the images in the cooking slot to 1 alpha
+    // Only if the cooking sprite is not null (meaning an ingredient is in it)
+    public void CookingManagerSpritesSetOpaque()
+    {
         foreach (Transform slot in CookingContent)
         {
             foreach (Transform item in slot)
             {
-                Destroy(item.gameObject);
+                Image image = item.gameObject.GetComponent<Image>();
+                if (image.sprite != null)
+                {
+                    Color tempColor = image.color;
+                    tempColor.a = 1;
+                    item.gameObject.GetComponent<Image>().color = tempColor;
+                }
             }
         }
+    }
+
+    // Turn a specific cookingslot transparent
+    public void CookingSlotSetTransparent(CookingSlot slot)
+    {
+        // index into first child slot bc should only be 1 child
+        //slot.transform.GetChild(0).GetComponent<Image>().sprite = null;
+        Image image = slot.transform.GetChild(0).GetComponent<Image>();
+        Color tempColor = image.color;
+        tempColor.a = 0;
+        slot.transform.GetChild(0).GetComponent<Image>().color = tempColor;
+    }
+
+    // Turn a specific cookingslot opaque
+    public void CookingSlotSetOpaque(CookingSlot slot)
+    {
+        Image image = slot.transform.GetChild(0).GetComponent<Image>();
+        Color tempColor = image.color;
+        tempColor.a = 1;
+        slot.transform.GetChild(0).GetComponent<Image>().color = tempColor;
     }
 
     public void ResetStatsText()

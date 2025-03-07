@@ -3,56 +3,95 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Security;
 
 public class CookingSlot : InventorySlot, IDropHandler, IPointerDownHandler, IPointerUpHandler
 {
     // Slightly modifying OnDrop From the base class
     public new void OnDrop(PointerEventData eventData)
     {
-        GameObject dropped = eventData.pointerDrag;
-        if (!dropped.TryGetComponent<DraggableItem>(out var draggableItem))
+        if (CursorManager.Singleton.cookingCursor.currentCollectableReference == null)
         {
-            Debug.Log("No Draggable Item Found!");
+            CursorManager.Singleton.cookingCursor.removeCursorImage();
+            CookingManager.Singleton.disableWorldDrop();
             return;
         }
 
-        if(!ingredientReference) {
-            dropHelper(true, CursorManager.Singleton.cookingCursor.currentCollectableReference, null);
+        DraggableItem draggableItem = CursorManager.Singleton.cookingCursor.currentCollectableReference.collectableUI.GetComponent<DraggableItem>();
 
-            // Get the Ingredient Type
-            Debug.Log("Ingredient Drop Detected!");
-            if (!basketDrop && !worldDrop)
+        draggableItem.parentAfterDrag = transform;
+
+        // SET PREVIOUS SLOT TO NULL
+        CookingSlot previousSlot = draggableItem.previousParent.GetComponent<CookingSlot>();
+        if (previousSlot != null && ingredientReference == null && this != CookingManager.Singleton.currentCookingSlot && !previousSlot.basketDrop && !previousSlot.worldDrop)
+        {
+            previousSlot.ingredientReference = null;
+            previousSlot.faceImage.sprite = null;
+            CookingManager.Singleton.RemoveIngredient(CursorManager.Singleton.cookingCursor.currentCollectableReference);
+       
+            CookingSlot previousParent = CookingManager.Singleton.currentCookingSlot;
+            if (previousParent != null)
             {
-                if (draggableItem.resetParent())
-                {
-                    // Get the Ingredient Type
-                    Debug.Log("Ingredient Drop Detected! " + this.gameObject.name);
-                    CookingManager.Singleton.AddIngredient(draggableItem.gameObject.transform.parent.gameObject.GetComponent<Collectable>());
-                }
-            } else if (worldDrop)
-            {
-                worldDropNonsense(draggableItem);
-            } else if (basketDrop)
-            {
-                CursorManager.Singleton.cookingCursor.currentCollectableReference.collectableUI.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-                CursorManager.Singleton.cookingCursor.currentCollectableReference.collectableUI.GetComponent<Image>().raycastTarget = true;
-                BasketUI.Singleton.AddIngredient(CursorManager.Singleton.cookingCursor.currentCollectableReference, false);
+                CookingManager.Singleton.CookingSlotSetTransparent(previousSlot);
             }
-            draggableItem.isDragging = false;
+            Debug.Log("MadeNULL!");
         }
 
+        // SET ACTUAL COOKING SLOT
+        if (basketDrop)
+        {
+            basketDropNonsense(CursorManager.Singleton.cookingCursor.currentCollectableReference.collectableUI.GetComponent<Image>());
+        } else if (worldDrop)
+        {
+            worldDropNonsense(draggableItem);
+        } else
+        {
+            if (ingredientReference == null && this != CookingManager.Singleton.currentCookingSlot)
+            {
+                //Debug.Log("Set!");
+
+                draggableItem.image.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+                draggableItem.image.raycastTarget = false;
+
+                CookingManager.Singleton.CookingSlotSetOpaque(this);
+
+                ingredientReference = CursorManager.Singleton.cookingCursor.currentCollectableReference;
+                updateIngredientImage(draggableItem.image);
+
+                CookingManager.Singleton.AddIngredient(draggableItem.gameObject.transform.parent.gameObject.GetComponent<Collectable>());
+
+                draggableItem.previousParent = transform;
+                draggableItem.isDragging = false;
+            } else
+            {
+                //Debug.Log((ingredientReference == null) + ", " + (this != CookingManager.Singleton.currentCookingSlot));
+            }
+        }
+
+        CookingManager.Singleton.currentCookingSlot = null;
         CursorManager.Singleton.cookingCursor.removeCursorImage();
         CookingManager.Singleton.disableWorldDrop();
     }
 
+    // This is called when you click on a cooking slot
+    // It sets the cursor image to the ingredient image
+    // and enables world drop box
     public void OnPointerDown(PointerEventData eventData)
     {
         if ((ingredientReference != null) && (faceImage.sprite != null))
         {
             CursorManager.Singleton.cookingCursor.switchCursorImageTo(ingredientReference, faceImage);
-            CookingManager.Singleton.cookingSlot = this;
+            CookingManager.Singleton.currentCookingSlot = this;
             CookingManager.Singleton.enableWorldDrop();
+            Encyclopedia.Singleton.PullUpEntry(ingredientReference.ingredient);
         }
+    }
+
+    private void basketDropNonsense(Image image)
+    {
+        image.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        image.raycastTarget = true;
+        BasketUI.Singleton.AddIngredient(CursorManager.Singleton.cookingCursor.currentCollectableReference, false);
     }
 
     private void worldDropNonsense(DraggableItem d)
@@ -70,19 +109,14 @@ public class CookingSlot : InventorySlot, IDropHandler, IPointerDownHandler, IPo
         CursorManager.Singleton.cookingCursor.currentCollectableReference.collectableObj.SetInteractable(true);
         CursorManager.Singleton.cookingCursor.currentCollectableReference.collectableObj.SetHighlighted(true);
 
-        d.pseudoParent = d.gameObject.transform.parent;
+        d.previousParent = d.gameObject.transform.parent;
         d.parentAfterDrag = null;
     }
 
+
+    // This is called when you stopclicking on top of a cooking slot
     public void OnPointerUp(PointerEventData eventData)
     {
-        if(CursorManager.Singleton.cookingCursor.currentCollectableReference == null)
-        {
-            CursorManager.Singleton.cookingCursor.removeCursorImage();
-            CookingManager.Singleton.disableWorldDrop();
-            return;
-        }
-
         PointerEventData pointerData = new PointerEventData(EventSystem.current)
         {
             position = Input.mousePosition
@@ -95,58 +129,17 @@ public class CookingSlot : InventorySlot, IDropHandler, IPointerDownHandler, IPo
         foreach (RaycastResult result in results)
         {
             dropTarget = result.gameObject.GetComponent<CookingSlot>();
-            if (dropTarget != null && dropTarget != CookingManager.Singleton.cookingSlot && !dropTarget.ingredientReference)
+            if(dropTarget != null)
             {
-                dropTarget.dropHelper(true, CursorManager.Singleton.cookingCursor.currentCollectableReference, null);
+                dropTarget.OnDrop(eventData);
                 break;
             }
         }
 
-        GameObject dropped = CursorManager.Singleton.cookingCursor.currentCollectableReference.gameObject.transform.GetChild(1).gameObject;
-        if (!dropped.TryGetComponent<DraggableItem>(out var draggableItem))
+        if(dropTarget == null)
         {
-            Debug.Log("No Draggable Item Found!");
-            return;
+            CursorManager.Singleton.cookingCursor.removeCursorImage();
+            CookingManager.Singleton.disableWorldDrop();
         }
-
-        if (dropTarget != null && dropTarget != CookingManager.Singleton.cookingSlot && !dropTarget.ingredientReference)
-        {
-
-            if (dropTarget.worldDrop)
-            {
-                worldDropNonsense(draggableItem);
-            }
-            else if (dropTarget.basketDrop)
-            {
-                CursorManager.Singleton.cookingCursor.currentCollectableReference.collectableUI.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-                CursorManager.Singleton.cookingCursor.currentCollectableReference.collectableUI.GetComponent<Image>().raycastTarget = true;
-                draggableItem.updateParent();
-                BasketUI.Singleton.AddIngredient(CursorManager.Singleton.cookingCursor.currentCollectableReference, false);
-            }
-            else
-            {
-                if (draggableItem.resetParent())
-                {
-                    // Get the Ingredient Type
-                    Debug.Log("Ingredient Drop Detected! " + this.gameObject.name);
-                    CookingManager.Singleton.AddIngredient(draggableItem.gameObject.transform.parent.gameObject.GetComponent<Collectable>());
-                }
-            }
-        } else
-        {
-            if (dropTarget != null && dropTarget.worldDrop)
-            {
-                worldDropNonsense(draggableItem);
-            }
-
-            if(dropTarget != null && dropTarget.ingredientReference != null)
-            {
-                draggableItem.gameObject.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-                draggableItem.gameObject.GetComponent<Image>().raycastTarget = true;
-            }
-        }
-        CursorManager.Singleton.cookingCursor.removeCursorImage();
-        CookingManager.Singleton.disableWorldDrop();
-        draggableItem.isDragging = false;
     }
 }
