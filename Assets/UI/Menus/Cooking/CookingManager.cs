@@ -44,7 +44,7 @@ public class CookingManager : MonoBehaviour
     [SerializeField]
     public List<Collectable> cookingIngredients = new();
 
-    private Campfire CurrentCampfire;
+    internal Campfire CurrentCampfire;
 
     public void EnterCooking(Campfire source)
     {
@@ -53,8 +53,11 @@ public class CookingManager : MonoBehaviour
         CursorManager.Singleton.ShowCookingCursor();
         ResetStatsText();
         CookingCanvas.SetActive(true);
+        basketDrop.SetActive(true);
+        CookingCanvas.transform.position = source.GetCanvasPosition();
         isCooking = true;
         instructionsOnPlayScreen.SetActive(false);
+        ClearCookingManagerSprites();
         PlayerEntityManager.Singleton.input.Player.Interact.started += ExitCooking;
         foreach(CookingSlot c in cookingSlots)
         {
@@ -73,6 +76,7 @@ public class CookingManager : MonoBehaviour
             CursorManager.Singleton.HideCursor();
             CursorManager.Singleton.HideCookingCursor();
             CookingCanvas.SetActive(false);
+            basketDrop.SetActive(false);
             ResetStatsText();
             isCooking = false;
             instructionsOnPlayScreen.SetActive(true);
@@ -80,7 +84,7 @@ public class CookingManager : MonoBehaviour
             {
                 c.collectableUI.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                 c.collectableUI.GetComponent<Image>().raycastTarget = true;
-                c.collectableUI.GetComponent<DraggableItem>().pseudoParent = basketDrop.transform;
+                c.collectableUI.GetComponent<DraggableItem>().previousParent = basketDrop.transform;
             }
             cookingIngredients.Clear();
 
@@ -224,15 +228,12 @@ public class CookingManager : MonoBehaviour
     {
         foreach (Transform slot in CookingContent)
         {
-            foreach (Transform item in slot)
-            {
-                item.gameObject.GetComponent<Image>().sprite = null;
-                Image image = item.gameObject.GetComponent<Image>();
-                Color tempColor = image.color;
-                tempColor.a = 0;
-                item.gameObject.GetComponent<Image>().color = tempColor;
-                //Destroy(item.gameObject);
-            }
+            slot.gameObject.GetComponent<CookingSlot>().ingredientReference = null;
+            slot.gameObject.GetComponent<CookingSlot>().faceImage.sprite = null;
+
+            Color tempColor = slot.gameObject.GetComponent<CookingSlot>().faceImage.color;
+            tempColor.a = 0;
+            slot.gameObject.GetComponent<CookingSlot>().faceImage.color = tempColor;
         }
     }
 
