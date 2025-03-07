@@ -19,6 +19,10 @@ MonoBehaviour:
     m_Key: Title Text
     m_Metadata:
       m_Items: []
+  - m_Id: 365460011868160
+    m_Key: LanguageScene Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
