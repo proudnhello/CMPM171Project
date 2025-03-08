@@ -23,6 +23,22 @@ MonoBehaviour:
     m_Key: LanguageScene Text
     m_Metadata:
       m_Items: []
+  - m_Id: 620073621381120
+    m_Key: Start Button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 620073621381121
+    m_Key: Options Button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 620073621381122
+    m_Key: Controls Button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 620073621381123
+    m_Key: Exit Button
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
