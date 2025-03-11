@@ -67,6 +67,30 @@ MonoBehaviour:
     m_Key: Game Over
     m_Metadata:
       m_Items: []
+  - m_Id: 1701616922124288
+    m_Key: Burn Infliction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1701702951493632
+    m_Key: Freeze Infliction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1701816818458624
+    m_Key: Health Infliction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1701916076662784
+    m_Key: Damage Infliction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1702185841713152
+    m_Key: Knockback Infliction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1702306969018368
+    m_Key: Vampirism Infliction
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

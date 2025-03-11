@@ -71,6 +71,30 @@ MonoBehaviour:
     m_Localized: Fim do Jogo
     m_Metadata:
       m_Items: []
+  - m_Id: 1701616922124288
+    m_Localized: Queimadura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1701702951493632
+    m_Localized: Congelar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1701816818458624
+    m_Localized: "Sa\xFAde"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1701916076662784
+    m_Localized: Dano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1702185841713152
+    m_Localized: Recuo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1702306969018368
+    m_Localized: Vampirismo
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

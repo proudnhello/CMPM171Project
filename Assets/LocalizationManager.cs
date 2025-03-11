@@ -2,10 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using UnityEngine.Localization.Tables;
 
-public class LocalizationSelector : MonoBehaviour
+public class LocalizationManager : MonoBehaviour
 {
+    public LocalizationManager Singleton { get; private set; }
+
+    public static TableReference tableReference = "Languages";
+
+    private void Awake()
+    {
+        if (Singleton != null && Singleton != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Singleton = this;
+            DontDestroyOnLoad(this);
+        }
+    }
+
     private bool active = false;
+
+    public static TableReference GetTable()
+    {
+        return tableReference;
+    }
 
     public void ChangeLanguage(int langID)
     {

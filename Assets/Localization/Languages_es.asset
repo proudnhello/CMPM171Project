@@ -71,6 +71,30 @@ MonoBehaviour:
     m_Localized: Fin del Juego
     m_Metadata:
       m_Items: []
+  - m_Id: 1701616922124288
+    m_Localized: Quemadura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1701702951493632
+    m_Localized: Congelar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1701816818458624
+    m_Localized: Salud
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1701916076662784
+    m_Localized: "Da\xF1o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1702185841713152
+    m_Localized: Retroceso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1702306969018368
+    m_Localized: Vampirismo
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
