@@ -72,9 +72,9 @@ public class Encyclopedia : MonoBehaviour
         foreach (var icon in FlavorIcons) icon.gameObject.SetActive(false);
 
         if (!collectedEntries.Contains(ing)) collectedEntries.Add(ing);
-        Title.text = ing.IngredientName;
+        Title.text = ing.IngredientName;    // swap with call to localization manager
         EntryImage.sprite = ing.EncyclopediaImage;
-        SourceText.text = ing.Source;
+        SourceText.text = ing.Source;    // swap with call to localization manager
 
         if (ing.GetType() == typeof(FlavorIngredient))
         {
@@ -116,7 +116,7 @@ public class Encyclopedia : MonoBehaviour
         {
             AbilityEntry.gameObject.SetActive(true);
             FlavorProfile.SetActive(false);
-            AbilityEntry.text = ((AbilityIngredient)ing).AbilityDescription;         
+            AbilityEntry.text = ((AbilityIngredient)ing).AbilityDescription;       // swap with call to localization manager  
         }
     }
 
