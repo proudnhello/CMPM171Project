@@ -10,6 +10,8 @@ public class PlayerInventory : MonoBehaviour
     public static PlayerInventory Singleton { get; private set; }
     public static event Action UsedSpoon;
     public static event Action<int> ChangedSpoon;
+    public static event Action<int> AddSpoon;
+    public static event Action<int> RemoveSpoon;
     public int maxSpoons = 4;
 
     public List<Ingredient> defaultSpoonIngredients;
@@ -59,7 +61,6 @@ public class PlayerInventory : MonoBehaviour
 
     public void CollectIngredientCollectable(Collectable collectable)
     {
-        //Debug.Log($"Collected Ingredient {collectable.ingredient}");
         collectablesHeld.Add(collectable);
         BasketUI.Singleton.AddIngredient(collectable, true);
     }
@@ -71,7 +72,6 @@ public class PlayerInventory : MonoBehaviour
     // (The collider under the basket calls it in reverse, the cook button calls it forward)
     public void RemoveIngredientCollectable(Collectable collectable, bool needsDestroy)
     {
-        //Debug.Log("Remove Ingredient Called");
         collectablesHeld.Remove(collectable);
         BasketUI.Singleton.RemoveIngredient(collectable, needsDestroy);
     }
@@ -82,6 +82,7 @@ public class PlayerInventory : MonoBehaviour
 
         spoons.Add(new SoupSpoon(ingredients));
         currentSpoon = spoons.Count - 1;
+        AddSpoon?.Invoke(currentSpoon);
         ChangedSpoon?.Invoke(currentSpoon);
 
         return true;
@@ -125,13 +126,11 @@ public class PlayerInventory : MonoBehaviour
         if (spoon.uses == 0)
         {
             spoons.RemoveAt(currentSpoon);
+            RemoveSpoon?.Invoke(currentSpoon);
             currentSpoon--;
             currentSpoon = currentSpoon < 0 ? spoons.Count - 1 : currentSpoon;
-        } 
-    }
+        }
 
-    public void UpdateSpooon()
-    {
         ChangedSpoon?.Invoke(currentSpoon);
     }
 }

@@ -1,13 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+/*
 #if UNITY_EDITOR
 #else
 #endif
+*/
 
 public class GameManager : MonoBehaviour
 {
@@ -72,8 +74,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadGameLevel()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(1);
-        ResumeGame();
     }
 
     // Goes to Death Scene
@@ -94,14 +96,21 @@ public class GameManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
-        ResumeGame();
     }
 
     // Restarts the Game
     public void RestartGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(1);
-        ResumeGame();
+    }
+
+    public void LanguageSelect(){
+        SceneManager.LoadScene(4);
+    }
+    public void EnterControlsScreen()
+    {
+        SceneManager.LoadScene(5);
     }
 
     public void LanguageSelect(){
@@ -114,6 +123,7 @@ public class GameManager : MonoBehaviour
 
     public void ConfirmedExit()
     {
+        /*
         if (Application.isEditor)
         {
             // Code for Unity Editor
@@ -126,6 +136,8 @@ public class GameManager : MonoBehaviour
             Debug.Log("Exiting Game in Build");
             Application.Quit();  // Quits the game in a build
         }
+        */
+        Application.Quit();  // Quits the game in a build
     }
 
     public void ReturnFromExit()
