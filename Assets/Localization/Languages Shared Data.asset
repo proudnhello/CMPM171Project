@@ -215,6 +215,74 @@ MonoBehaviour:
     m_Key: Hopshroom
     m_Metadata:
       m_Items: []
+  - m_Id: 3796977211924480
+    m_Key: Flavor Profile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087424
+    m_Key: Tofu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087425
+    m_Key: Yellow Onion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087426
+    m_Key: Lemon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087427
+    m_Key: Candy Cap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087428
+    m_Key: Golden Chantarelle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087429
+    m_Key: Wild Mustard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087430
+    m_Key: Cat's Ear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087431
+    m_Key: Kelp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087432
+    m_Key: Stinging Nettle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087433
+    m_Key: Blue Elderberry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087434
+    m_Key: Garden snail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087435
+    m_Key: Black Sage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3810022663380992
+    m_Key: Lettuce Ear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3810022663380993
+    m_Key: Demented Pepper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3810022663380994
+    m_Key: Spuds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3810022663380995
+    m_Key: Shroom Head
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

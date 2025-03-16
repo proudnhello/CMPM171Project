@@ -232,6 +232,74 @@ MonoBehaviour:
     m_Localized: Sapotrilhos
     m_Metadata:
       m_Items: []
+  - m_Id: 3796977211924480
+    m_Localized: Perfil de Sabor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087424
+    m_Localized: Tofu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087425
+    m_Localized: Cebola Amarela
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087426
+    m_Localized: "Lim\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087427
+    m_Localized: "Cogumelo de chap\xE9u caramelo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087428
+    m_Localized: Cogumelo Chanterelle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087429
+    m_Localized: Mostarda Silvestre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087430
+    m_Localized: "Dente-de-le\xE3o Falso"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087431
+    m_Localized: Alga Marinha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087432
+    m_Localized: Urtiga
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087433
+    m_Localized: Sabugueiro Azul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087434
+    m_Localized: Caracol de Jardim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087435
+    m_Localized: "S\xE1lvia Negra"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3810022663380992
+    m_Localized: Folha de Alface
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3810022663380993
+    m_Localized: Pimenta Demente
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3810022663380994
+    m_Localized: Batatinhas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3810022663380995
+    m_Localized: "Chap\xE9u de cogumelo"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

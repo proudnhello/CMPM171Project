@@ -232,6 +232,74 @@ MonoBehaviour:
     m_Localized: Ranafongos
     m_Metadata:
       m_Items: []
+  - m_Id: 3796977211924480
+    m_Localized: Perfil de Sabor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087424
+    m_Localized: Tofu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087425
+    m_Localized: Cebolla Amarilla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087426
+    m_Localized: "Lim\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087427
+    m_Localized: Hongo de gorra caramelo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087428
+    m_Localized: Seta Chanterelle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087429
+    m_Localized: Mostaza Silvestre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087430
+    m_Localized: "Diente de le\xF3n Falso"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087431
+    m_Localized: Alga Marina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087432
+    m_Localized: Ortiga
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087433
+    m_Localized: "Sa\xFAco Azul"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087434
+    m_Localized: "Caracol de Jard\xEDn"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807141210087435
+    m_Localized: Salvia Negra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3810022663380992
+    m_Localized: Hoja de Lechuga
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3810022663380993
+    m_Localized: Pimienta Demente
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3810022663380994
+    m_Localized: Papitas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3810022663380995
+    m_Localized: Sombrero de Seta
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
