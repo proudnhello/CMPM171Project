@@ -292,6 +292,46 @@ MonoBehaviour:
     m_Localized: Shroom Head
     m_Metadata:
       m_Items: []
+  - m_Id: 3827984241778688
+    m_Localized: Increases ability duration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778689
+    m_Localized: Increases ability size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778690
+    m_Localized: Increases ability speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778691
+    m_Localized: Steals health from enemies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778692
+    m_Localized: Sets enemies ablaze over time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778693
+    m_Localized: Slows down enemies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778694
+    m_Localized: Grants health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778695
+    m_Localized: Increases damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778696
+    m_Localized: Increases knockback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984245972992
+    m_Localized: Increases chance for Critical Damage
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -283,6 +283,46 @@ MonoBehaviour:
     m_Key: Shroom Head
     m_Metadata:
       m_Items: []
+  - m_Id: 3827984241778688
+    m_Key: Sour Tooltip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778689
+    m_Key: Bitter Tooltip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778690
+    m_Key: Sweet Tooltip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778691
+    m_Key: Umami Tooltip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778692
+    m_Key: Spicy Tooltip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778693
+    m_Key: Frosty Tooltip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778694
+    m_Key: Hearty Tooltip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778695
+    m_Key: Spiky Tooltip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778696
+    m_Key: Greasy Tooltip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984245972992
+    m_Key: Salty Tooltip
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

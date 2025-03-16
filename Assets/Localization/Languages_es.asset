@@ -300,6 +300,46 @@ MonoBehaviour:
     m_Localized: Sombrero de Seta
     m_Metadata:
       m_Items: []
+  - m_Id: 3827984241778688
+    m_Localized: "Aumenta la duraci\xF3n de la habilidad"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778689
+    m_Localized: "Aumenta el tama\xF1o de la habilidad"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778690
+    m_Localized: Aumenta la velocidad de la habilidad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778691
+    m_Localized: Roba vida de los enemigos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778692
+    m_Localized: Prende fuego a los enemigos con el tiempo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778693
+    m_Localized: Ralentiza a los enemigos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778694
+    m_Localized: Concede salud
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778695
+    m_Localized: "Aumenta el da\xF1o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778696
+    m_Localized: Aumenta el retroceso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984245972992
+    m_Localized: "Aumenta la probabilidad de Da\xF1o Cr\xEDtico"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

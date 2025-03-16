@@ -300,6 +300,46 @@ MonoBehaviour:
     m_Localized: "Chap\xE9u de cogumelo"
     m_Metadata:
       m_Items: []
+  - m_Id: 3827984241778688
+    m_Localized: "Aumenta a dura\xE7\xE3o da habilidade"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778689
+    m_Localized: Aumenta o tamanho da habilidade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778690
+    m_Localized: Aumenta a velocidade da habilidade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778691
+    m_Localized: Rouba vida dos inimigos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778692
+    m_Localized: Incendeia os inimigos por um tempo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778693
+    m_Localized: Faz os inimigos mais lentos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778694
+    m_Localized: Concede vida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778695
+    m_Localized: Aumenta o dano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984241778696
+    m_Localized: Aumenta o recuo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3827984245972992
+    m_Localized: "Aumenta a chance de Dano Cr\xEDtico"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
