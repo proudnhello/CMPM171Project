@@ -167,6 +167,54 @@ MonoBehaviour:
     m_Key: Very BITTER_Size with a light SPICY_Burn undertone
     m_Metadata:
       m_Items: []
+  - m_Id: 3793490193408000
+    m_Key: Dropped by Flettuces
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408001
+    m_Key: Dropped by Habaperros
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408002
+    m_Key: Dropped by Taterhops
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408003
+    m_Key: Dropped by Hopshrooms
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408004
+    m_Key: Deals a heavy slash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408005
+    m_Key: Shoots a fiery zone. Anything that walks in will be set ablaze!!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408006
+    m_Key: Shoots out a quick damaging projectile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408007
+    m_Key: Shoots two spores that'll freeze anything it hits.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408008
+    m_Key: Flettuce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408009
+    m_Key: Habaperro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408010
+    m_Key: Taterhop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408011
+    m_Key: Hopshroom
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

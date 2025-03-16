@@ -184,6 +184,54 @@ MonoBehaviour:
     m_Localized: Muito BITTER_Size com um leve tom SPICY_Burn
     m_Metadata:
       m_Items: []
+  - m_Id: 3793490193408000
+    m_Localized: Coletar de Alfovantes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408001
+    m_Localized: "Coletar de Salsac\xE3es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408002
+    m_Localized: Coletar de Pulatatas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408003
+    m_Localized: Coletar de Sapotrilhos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408004
+    m_Localized: Executa um corte pesado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408005
+    m_Localized: "Dispara uma zona de fogo. Quem entrar ser\xE1 incendiado!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408006
+    m_Localized: "Dispara um proj\xE9til r\xE1pido e letal!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408007
+    m_Localized: Atira dois esporos que congelam qualquer coisa que atingirem.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408008
+    m_Localized: Alfovante
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408009
+    m_Localized: "Salsac\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408010
+    m_Localized: Pulatatas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408011
+    m_Localized: Sapotrilhos
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

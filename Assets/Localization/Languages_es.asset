@@ -184,6 +184,54 @@ MonoBehaviour:
     m_Localized: Muy BITTER_Size con un tono ligero de SPICY_Burn
     m_Metadata:
       m_Items: []
+  - m_Id: 3793490193408000
+    m_Localized: Coletar de Saladrones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408001
+    m_Localized: Coletar de Habaperros
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408002
+    m_Localized: Coletar de Saltapapas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408003
+    m_Localized: Coletar de Ranafongos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408004
+    m_Localized: Lanza un corte poderoso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408005
+    m_Localized: "Dispara una zona de fuego. \xA1Quie pise se quemar\xE1!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408006
+    m_Localized: "Dispara un proyectil r\xE1pido y letal!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408007
+    m_Localized: Dispara dos esporas que congelan todo lo que tocan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408008
+    m_Localized: Saladrone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408009
+    m_Localized: Habaperros
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408010
+    m_Localized: Saltapapas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793490193408011
+    m_Localized: Ranafongos
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
