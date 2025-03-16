@@ -74,7 +74,7 @@ public class Encyclopedia : MonoBehaviour
         if (!collectedEntries.Contains(ing)) collectedEntries.Add(ing);
         Title.text = ing.IngredientName;    // swap with call to localization manager
         EntryImage.sprite = ing.EncyclopediaImage;
-        SourceText.text = ing.Source;    // swap with call to localization manager
+        SourceText.text = LocalizationManager.GetLocalizedString(ing.Source);    // swap with call to localization manager
 
         if (ing.GetType() == typeof(FlavorIngredient))
         {
@@ -82,7 +82,8 @@ public class Encyclopedia : MonoBehaviour
             AbilityEntry.gameObject.SetActive(false);
 
             // PARSE FLAVORS IN TEXT AND REPLACE WITH ICONS
-            string[] words = ((FlavorIngredient)ing).FlavorProfile.Split(' ');
+            string localizedstr = LocalizationManager.GetLocalizedString(((FlavorIngredient)ing).FlavorProfile);
+            string[] words = localizedstr.Split(' ');
             string display = "";
             int icon = 0;
             for (int i = 0; i < words.Length; i++)

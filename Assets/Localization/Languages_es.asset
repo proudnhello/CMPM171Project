@@ -116,6 +116,74 @@ MonoBehaviour:
       [E]'
     m_Metadata:
       m_Items: []
+  - m_Id: 3516305893220352
+    m_Localized: Encontrado de tofu grande
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3516305893220353
+    m_Localized: Encontrado en el suelo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3516305893220354
+    m_Localized: Cosechado de arboles grandes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3516305893220355
+    m_Localized: Encontrado cerca de pantanos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3516305893220356
+    m_Localized: Les gusta gatear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954095083520
+    m_Localized: Famoso por sus tonos GREASY_Knockback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277824
+    m_Localized: 'Proporciona un sabor HEARTY_Health reconfortante '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277825
+    m_Localized: Sabor intenso de SOUR_Duration que se queda en su boca
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277826
+    m_Localized: Sabor fuerte de SWEET_Speed con un toque de HEARTY_Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277827
+    m_Localized: Sabor famoso de UMAMI_Vampirism con un toque de SALTY_Crit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277828
+    m_Localized: 'Advertencia: Muy SPICY_Burn'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277829
+    m_Localized: Altos niveles de BITTER_Size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277830
+    m_Localized: Un fuerte sabor de SALTY_Crit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277831
+    m_Localized: Bien SPIKY_Damage pero es delicioso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277832
+    m_Localized: Proporciona un fuerte sabor SWEET_Speed a qualquier sopa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277833
+    m_Localized: Una delicadeza FROSTY_Freeze con un toque de GREASY_Knockback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277834
+    m_Localized: Muy BITTER_Size con un tono ligero de SPICY_Burn
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

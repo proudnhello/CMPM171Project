@@ -31,7 +31,7 @@ public class LocalizationManager : MonoBehaviour
         return tableReference;
     }
 
-    public string GetLocalizedString(string key)
+    public static string GetLocalizedString(string key)
     {
         LocalizedString localString = new LocalizedString(LocalizationManager.GetTable(), key);
         return localString.GetLocalizedString();

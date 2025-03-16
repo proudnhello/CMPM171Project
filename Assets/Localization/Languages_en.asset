@@ -108,6 +108,74 @@ MonoBehaviour:
       [E]'
     m_Metadata:
       m_Items: []
+  - m_Id: 3516305893220352
+    m_Localized: Found from big jiggly tofu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3516305893220353
+    m_Localized: Found from the ground
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3516305893220354
+    m_Localized: Harvested from big trees
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3516305893220355
+    m_Localized: Found near swamps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3516305893220356
+    m_Localized: They like to crawl around
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954095083520
+    m_Localized: Famous for its GREASY_Knockback tones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277824
+    m_Localized: Provides a comfy HEARTY_Health flavor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277825
+    m_Localized: Intense SOUR_Duration flavor that sits on your tongue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277826
+    m_Localized: Strong SWEET_Speed flavor with a hint of HEARTY_Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277827
+    m_Localized: Famous UMAMI_Vampirism flavor with a twinge of SALTY_Crit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277828
+    m_Localized: 'Warning: very SPICY_Burn'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277829
+    m_Localized: High levels of BITTER_Size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277830
+    m_Localized: A strong SALTY_Crit sea flavor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277831
+    m_Localized: Very SPIKY_Damage but delicious
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277832
+    m_Localized: Provides a strong SWEET_Speed essence to any stew
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277833
+    m_Localized: A FROSTY_Freeze delicacy and a bit GREASY_Knockback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3524954099277834
+    m_Localized: Very BITTER_Size with a light SPICY_Burn undertone
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
