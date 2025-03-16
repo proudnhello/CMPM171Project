@@ -1041,7 +1041,7 @@ MonoBehaviour:
   - KEY: HEARTY_Health
     REPLACEMENT_TEXT: ~sour.........
     ICON: {fileID: 21300000, guid: 2eecc6ad584635a4ab0a51d436313ab6, type: 3}
-    TOOLTIP_TEXT: Healthy Tooltip
+    TOOLTIP_TEXT: Hearty Tooltip
   - KEY: SPIKY_Damage
     REPLACEMENT_TEXT: ~sour.........
     ICON: {fileID: 21300000, guid: 4f4dd4397eaeb7e45a75211e68aee234, type: 3}
