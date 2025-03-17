@@ -63,16 +63,16 @@ public class DeathMetricsManager : MonoBehaviour
 
         if (newMaxNumEnemiesKilled)
         {
-            metricsText.text += "Monsters Slain: " +
+            metricsText.text += LocalizationManager.GetLocalizedString("Monsters Slain") +
                 $"<color=#F4B07D>{numEnemiesKilled}</color>" +
-                $"<color=#A9A9A9> (New Best!)</color>" +
+                $"<color=#A9A9A9> (" + LocalizationManager.GetLocalizedString("New Best") + ")</color>" +
                 "\n";
         }
         else
         {
-            metricsText.text += "Monsters Slain: " +
+            metricsText.text += LocalizationManager.GetLocalizedString("Monsters Slain") +
                 $"<color=#F4B07D>{numEnemiesKilled}</color>" +
-                $"<color=#A9A9A9> (Best: {maxNumEnemiesKilled})</color>" +
+                $"<color=#A9A9A9> (" + LocalizationManager.GetLocalizedString("Best") + $"{maxNumIngredientsCollected})</color>" +
                 "\n";
         }
 
