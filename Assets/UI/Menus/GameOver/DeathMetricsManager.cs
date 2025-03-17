@@ -82,31 +82,31 @@ public class DeathMetricsManager : MonoBehaviour
 
         if (newMaxNumIngredientsCollected)
         {
-            metricsText.text += "Ingredients Collected: " +
+            metricsText.text += LocalizationManager.GetLocalizedString("Ingredients Collected") +
                 $"<color=#F4B07D>{numIngredientsCollected}</color>" +
-                $"<color=#A9A9A9> (New Best!)</color>" +
+                $"<color=#A9A9A9> (" + LocalizationManager.GetLocalizedString("New Best") + ")</color>" +
                 "\n";
         }
         else
         {
-            metricsText.text += "Ingredients Collected: " +
+            metricsText.text += LocalizationManager.GetLocalizedString("Ingredients Collected") +
                 $"<color=#F4B07D>{numIngredientsCollected}</color>" +
-                $"<color=#A9A9A9> (Best: {maxNumIngredientsCollected})</color>" +
+                $"<color=#A9A9A9> (" + LocalizationManager.GetLocalizedString("Best") + $"{maxNumIngredientsCollected})</color>" +
                 "\n";
         }
 
         if (newMaxNumSoupsCooked)
         {
-            metricsText.text += "Soups Cooked: " +
+            metricsText.text += LocalizationManager.GetLocalizedString("Soups Cooked") +
                 $"<color=#F4B07D>{numSoupsCooked}</color>" +
-                $"<color=#A9A9A9> (New Best!)</color>" +
+                $"<color=#A9A9A9> (" + LocalizationManager.GetLocalizedString("New Best") + ")</color>" +
                 "\n";
         }
         else
         {
-            metricsText.text += "Soups Cooked: " +
+            metricsText.text += LocalizationManager.GetLocalizedString("Soups Cooked") +
                 $"<color=#F4B07D>{numSoupsCooked}</color>" +
-                $"<color=#A9A9A9> (Best: {maxNumSoupsCooked})</color>" +
+                $"<color=#A9A9A9> (" + LocalizationManager.GetLocalizedString("Best") +  $"{maxNumSoupsCooked})</color>" +
                 "\n";
         }
 
@@ -150,12 +150,12 @@ public class DeathMetricsManager : MonoBehaviour
         //        "\n";
         //}
 
-        metricsText.text += "Time Elapsed: " +
+        metricsText.text += LocalizationManager.GetLocalizedString("Time Elapsed") +
             $"<color=#F4B07D>{timeElapsedStr}</color>" +
             "\n";
 
-        metricsText.text += "Total Deaths: " + $"<color=#F4B07D>{totalDeaths}</color>" + "\n";
-        metricsText.text += "Total Wins: " + $"<color=#F4B07D>{totalWins}</color>" + "\n";
+        metricsText.text += LocalizationManager.GetLocalizedString("Total Deaths") + $"<color=#F4B07D>{totalDeaths}</color>" + "\n";
+        metricsText.text += LocalizationManager.GetLocalizedString("Total Wins") + $"<color=#F4B07D>{totalWins}</color>" + "\n";
     }
 
     // Process Stats
