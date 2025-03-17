@@ -9,6 +9,7 @@ public class Destroyables : MonoBehaviour
     public bool randDrop = false;
     [SerializeField] private Collectable singleCollectable;
     [SerializeField] private List<Collectable> multipleCollectables;
+    [SerializeField] private float oddsForSomething = .5f;
 
     public void RemoveDestroyable()
     {
@@ -26,9 +27,12 @@ public class Destroyables : MonoBehaviour
         {
             if (multipleCollectables != null)
             {
-                int randomIndex = UnityEngine.Random.Range(0, multipleCollectables.Count);
-                GameObject gameObj = Instantiate(multipleCollectables[randomIndex].gameObject, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
-                gameObj.GetComponent<Collectable>().Spawn(this.transform.position);
+                if (UnityEngine.Random.Range(0f, 1f) < oddsForSomething)
+                {
+                    int randomIndex = UnityEngine.Random.Range(0, multipleCollectables.Count);
+                    GameObject gameObj = Instantiate(multipleCollectables[randomIndex].gameObject, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+                    gameObj.GetComponent<Collectable>().Spawn(this.transform.position);
+                }
                 Destroyed?.Invoke();
             }
         }
