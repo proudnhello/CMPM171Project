@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using static SoupSpoon;
+using UnityEngine.Rendering.Universal;
 
 
 // Gets Items In the Cooking Slots and Call FillPot
@@ -45,7 +46,7 @@ public class CookingManager : MonoBehaviour
     [SerializeField]
     public List<Collectable> cookingIngredients = new();
 
-    internal Campfire CurrentCampfire;
+    [SerializeField] internal Campfire CurrentCampfire;
 
     public void EnterCooking(Campfire source)
     {
@@ -71,7 +72,7 @@ public class CookingManager : MonoBehaviour
     {
         if (CurrentCampfire != null)
         {
-            CurrentCampfire.StopCooking();
+            CurrentCampfire.StopPrepping();
             CurrentCampfire = null;
             CursorManager.Singleton.HideCursor();
 
@@ -106,6 +107,9 @@ public class CookingManager : MonoBehaviour
             }
 
             PlayerEntityManager.Singleton.input.Player.Interact.started -= ExitCooking;
+
+            // Save game after cooking
+            SaveManager.Singleton.Save();
         }
     }
     
@@ -203,14 +207,38 @@ public class CookingManager : MonoBehaviour
             HideAbilityIngWarning();
         }
 
-        if (!PlayerEntityManager.Singleton.HasCooked())
-        {
-            ShowCampfireWarning();
-            PlayerEntityManager.Singleton.SetCooked(true);
-        }
+        //if (!PlayerEntityManager.Singleton.HasCooked())
+        //{
+        //    ShowCampfireWarning();
+        //    PlayerEntityManager.Singleton.SetCooked(true);
+        //}
 
         // turn off interactable after cooking once
         CurrentCampfire.SetInteractable(false);
+        CurrentCampfire.SetHighlighted(false);
+
+        // Trigger Transition to Break Animation
+        Animator campfireAnimator = CurrentCampfire.GetComponent<Animator>();
+
+        // Turn Off Light
+        // Get the Light 2D component from the child object
+        Light2D light = CurrentCampfire.transform.Find("Light 2D").GetComponent<Light2D>();
+        if (light != null)
+        {
+            light.enabled = false;
+        }
+
+        if (CurrentCampfire.gameObject == null)
+        {
+            Debug.Log("Campfire Animator not found!");
+        }
+
+        if (campfireAnimator == null)
+        {
+            Debug.Log("Campfire Animator not found!");
+        }
+
+        campfireAnimator.SetTrigger("Cooked The Soup");
 
         // Cook the soup with what is currently in the pot
         List<Ingredient> cookedIngredients = new();
