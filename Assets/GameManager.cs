@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
         // Delete previous save
         File.Delete(Path.Combine(Application.persistentDataPath + Path.AltDirectorySeparatorChar + "Stats.json"));
         File.Delete(Path.Combine(Application.persistentDataPath + Path.AltDirectorySeparatorChar + "Entities.json"));
+        File.Delete(Path.Combine(Application.persistentDataPath + Path.AltDirectorySeparatorChar + "Player.json"));
 
         #if UNITY_EDITOR
         UnityEditor.AssetDatabase.Refresh();
