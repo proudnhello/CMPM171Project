@@ -102,7 +102,9 @@ MonoBehaviour:
 
       Troque de colher
 
-      Interagir'
+      Interagir
+
+      Afastar/Aproximar'
     m_Metadata:
       m_Items: []
   - m_Id: 3102157438967808
@@ -113,7 +115,9 @@ MonoBehaviour:
       [Roda
       do Mouse]
 
-      [E]'
+      [E]
+
+      [Z]'
     m_Metadata:
       m_Items: []
   - m_Id: 3516305893220352

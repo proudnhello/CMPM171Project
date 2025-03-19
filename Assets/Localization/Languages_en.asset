@@ -95,7 +95,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3093004926574592
-    m_Localized: "Attack\nDash\nCycle Spoon \nInteract\n"
+    m_Localized: "Attack\nDash\nCycle Spoon \nInteract\nZoom in/out\n"
     m_Metadata:
       m_Items: []
   - m_Id: 3102157438967808
@@ -105,7 +105,9 @@ MonoBehaviour:
 
       [Scroll Wheel]
 
-      [E]'
+      [E]
+
+      [Z]'
     m_Metadata:
       m_Items: []
   - m_Id: 3516305893220352
