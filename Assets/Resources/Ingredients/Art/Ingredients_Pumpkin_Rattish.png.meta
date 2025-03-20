@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6f068be37b17a804bbe93f95d49a479e
+guid: b9e81c74ecaa0884dbe05bd78277d615
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,30 +93,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_0
+      name: Ingredients_Pumpkin_Rattish_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 84
-        height: 75
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5000ded892f0a9942a421b5530aa25b5
-      internalID: -1379092127
+      spriteID: a0990b23317f9a8448d7f2f7aec5881e
+      internalID: 625000687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_1
+      name: Ingredients_Pumpkin_Rattish_1
       rect:
         serializedVersion: 2
-        x: 84
+        x: 32
         y: 0
-        width: 84
-        height: 75
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,92 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8c6f0f6ec1bf3746824be3380096335
-      internalID: -1357937007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_2
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 0
-        width: 84
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f42cc2ebcaeedd34aa297d9c3feabf7f
-      internalID: 1322178502
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_3
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 0
-        width: 84
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52b1f378f575d874b9801f1ec8594c6b
-      internalID: -454557291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_4
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 84
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0873e03690eb77e42ac786984da2a5ed
-      internalID: 673887935
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_5
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 0
-        width: 84
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 014230290febfc940a01e9c0efdd9585
-      internalID: -208170242
+      spriteID: 88dba2f7c61bdb8458f899c234198fa3
+      internalID: 2076703166
       vertices: []
       indices: 
       edges: []
@@ -246,12 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Campfire_Sprite_Sheet_1_0: -1379092127
-      Campfire_Sprite_Sheet_1_1: -1357937007
-      Campfire_Sprite_Sheet_1_2: 1322178502
-      Campfire_Sprite_Sheet_1_3: -454557291
-      Campfire_Sprite_Sheet_1_4: 673887935
-      Campfire_Sprite_Sheet_1_5: -208170242
+      Ingredients_Pumpkin_Rattish_0: 625000687
+      Ingredients_Pumpkin_Rattish_1: 2076703166
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

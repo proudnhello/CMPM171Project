@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6f068be37b17a804bbe93f95d49a479e
+guid: 0759ad3dbc0521549a6d5cb9f002369b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,30 +93,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_0
+      name: Radish_Rat_Enemy_Shooting-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 84
-        height: 75
+        width: 39
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5000ded892f0a9942a421b5530aa25b5
-      internalID: -1379092127
+      spriteID: d93fe300416691647a47e8b396a794ca
+      internalID: -1689317185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_1
+      name: Radish_Rat_Enemy_Shooting-Sheet_1
       rect:
         serializedVersion: 2
-        x: 84
+        x: 39
         y: 0
-        width: 84
-        height: 75
+        width: 39
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8c6f0f6ec1bf3746824be3380096335
-      internalID: -1357937007
+      spriteID: db6df60be2b9b9448b98ec94e579eed7
+      internalID: -1691239543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_2
+      name: Radish_Rat_Enemy_Shooting-Sheet_2
       rect:
         serializedVersion: 2
-        x: 168
+        x: 78
         y: 0
-        width: 84
-        height: 75
+        width: 39
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f42cc2ebcaeedd34aa297d9c3feabf7f
-      internalID: 1322178502
+      spriteID: d3958bccb9d11f240a4039659145be75
+      internalID: -2108392085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_3
+      name: Radish_Rat_Enemy_Shooting-Sheet_3
       rect:
         serializedVersion: 2
-        x: 252
+        x: 117
         y: 0
-        width: 84
-        height: 75
+        width: 39
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52b1f378f575d874b9801f1ec8594c6b
-      internalID: -454557291
+      spriteID: 5f883963324c8904b848307ccbbe6a1b
+      internalID: -1691431791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_4
+      name: Radish_Rat_Enemy_Shooting-Sheet_4
       rect:
         serializedVersion: 2
-        x: 336
+        x: 156
         y: 0
-        width: 84
-        height: 75
+        width: 39
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0873e03690eb77e42ac786984da2a5ed
-      internalID: 673887935
+      spriteID: 87f4fb4d1e03f2c41931029b299e9d8b
+      internalID: 434210486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_5
+      name: Radish_Rat_Enemy_Shooting-Sheet_5
       rect:
         serializedVersion: 2
-        x: 420
+        x: 195
         y: 0
-        width: 84
-        height: 75
+        width: 39
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +216,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 014230290febfc940a01e9c0efdd9585
-      internalID: -208170242
+      spriteID: 6d3af47847dca8e4fa7ac1c33acf6188
+      internalID: -1138486902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radish_Rat_Enemy_Shooting-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 0
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e591cf0bb4054043bff89041fa29b14
+      internalID: 287058332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radish_Rat_Enemy_Shooting-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 0
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc805eb94637554ab91dbf19867388a
+      internalID: 38393967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radish_Rat_Enemy_Shooting-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fdcb1f6ba40ee347b34b6da988599f6
+      internalID: 507340726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radish_Rat_Enemy_Shooting-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 0
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a9d76a126811243bcb34d4219dc5f8
+      internalID: -816104802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radish_Rat_Enemy_Shooting-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 0
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc384ae31c6f88846a1eaf284a62e4b5
+      internalID: -1263541388
       vertices: []
       indices: 
       edges: []
@@ -246,12 +338,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Campfire_Sprite_Sheet_1_0: -1379092127
-      Campfire_Sprite_Sheet_1_1: -1357937007
-      Campfire_Sprite_Sheet_1_2: 1322178502
-      Campfire_Sprite_Sheet_1_3: -454557291
-      Campfire_Sprite_Sheet_1_4: 673887935
-      Campfire_Sprite_Sheet_1_5: -208170242
+      Radish_Rat_Enemy_Shooting-Sheet_0: -1689317185
+      Radish_Rat_Enemy_Shooting-Sheet_1: -1691239543
+      Radish_Rat_Enemy_Shooting-Sheet_10: -1263541388
+      Radish_Rat_Enemy_Shooting-Sheet_2: -2108392085
+      Radish_Rat_Enemy_Shooting-Sheet_3: -1691431791
+      Radish_Rat_Enemy_Shooting-Sheet_4: 434210486
+      Radish_Rat_Enemy_Shooting-Sheet_5: -1138486902
+      Radish_Rat_Enemy_Shooting-Sheet_6: 287058332
+      Radish_Rat_Enemy_Shooting-Sheet_7: 38393967
+      Radish_Rat_Enemy_Shooting-Sheet_8: 507340726
+      Radish_Rat_Enemy_Shooting-Sheet_9: -816104802
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

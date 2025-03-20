@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6f068be37b17a804bbe93f95d49a479e
+guid: e934a847d5e7a78458bbd31cfe0f23dc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,30 +93,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_0
+      name: Radish_Rat_Enemy_Going_To_Hide-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 84
-        height: 75
+        width: 39
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5000ded892f0a9942a421b5530aa25b5
-      internalID: -1379092127
+      spriteID: e7da5162570fa384c97a4add014c98be
+      internalID: -1251367297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_1
+      name: Radish_Rat_Enemy_Going_To_Hide-Sheet_1
       rect:
         serializedVersion: 2
-        x: 84
+        x: 39
         y: 0
-        width: 84
-        height: 75
+        width: 39
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8c6f0f6ec1bf3746824be3380096335
-      internalID: -1357937007
+      spriteID: 9b6fec92fc865f84092db1efd2651e28
+      internalID: 1153747239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_2
+      name: Radish_Rat_Enemy_Going_To_Hide-Sheet_2
       rect:
         serializedVersion: 2
-        x: 168
+        x: 78
         y: 0
-        width: 84
-        height: 75
+        width: 39
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f42cc2ebcaeedd34aa297d9c3feabf7f
-      internalID: 1322178502
+      spriteID: 0d1f3fb547269974bbce97474c1300ae
+      internalID: -2136918233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_3
+      name: Radish_Rat_Enemy_Going_To_Hide-Sheet_3
       rect:
         serializedVersion: 2
-        x: 252
+        x: 117
         y: 0
-        width: 84
-        height: 75
+        width: 39
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52b1f378f575d874b9801f1ec8594c6b
-      internalID: -454557291
+      spriteID: 24c26df45d6e4424f8b0e3eaacbb601e
+      internalID: -1208173546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_4
+      name: Radish_Rat_Enemy_Going_To_Hide-Sheet_4
       rect:
         serializedVersion: 2
-        x: 336
+        x: 156
         y: 0
-        width: 84
-        height: 75
+        width: 39
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0873e03690eb77e42ac786984da2a5ed
-      internalID: 673887935
+      spriteID: d57fe031df898c041bdf248cef85fb6e
+      internalID: 252723967
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Campfire_Sprite_Sheet_1_5
+      name: Radish_Rat_Enemy_Going_To_Hide-Sheet_5
       rect:
         serializedVersion: 2
-        x: 420
+        x: 195
         y: 0
-        width: 84
-        height: 75
+        width: 39
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +216,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 014230290febfc940a01e9c0efdd9585
-      internalID: -208170242
+      spriteID: 413513bfc538ba74895e07f9fbf7a56c
+      internalID: -1370187553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radish_Rat_Enemy_Going_To_Hide-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 0
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a47f10e6770e894584f34af410b3820
+      internalID: 1714664774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radish_Rat_Enemy_Going_To_Hide-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 0
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e02897cfc185bdc4086d452e271c189c
+      internalID: 1347480008
       vertices: []
       indices: 
       edges: []
@@ -246,12 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Campfire_Sprite_Sheet_1_0: -1379092127
-      Campfire_Sprite_Sheet_1_1: -1357937007
-      Campfire_Sprite_Sheet_1_2: 1322178502
-      Campfire_Sprite_Sheet_1_3: -454557291
-      Campfire_Sprite_Sheet_1_4: 673887935
-      Campfire_Sprite_Sheet_1_5: -208170242
+      Radish_Rat_Enemy_Going_To_Hide-Sheet_0: -1251367297
+      Radish_Rat_Enemy_Going_To_Hide-Sheet_1: 1153747239
+      Radish_Rat_Enemy_Going_To_Hide-Sheet_2: -2136918233
+      Radish_Rat_Enemy_Going_To_Hide-Sheet_3: -1208173546
+      Radish_Rat_Enemy_Going_To_Hide-Sheet_4: 252723967
+      Radish_Rat_Enemy_Going_To_Hide-Sheet_5: -1370187553
+      Radish_Rat_Enemy_Going_To_Hide-Sheet_6: 1714664774
+      Radish_Rat_Enemy_Going_To_Hide-Sheet_7: 1347480008
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
